@@ -2,7 +2,21 @@
 
 Welcome to **NutriGlow**, your personalized guide to healthy eating and smart recipe recommendations!
 
-> Live Demo: [NutriGlow](http://3.111.246.217/)
+## 🌐 Live Link
+
+👉 Live Demo: [NutriGlow](http://3.111.246.217/)
+
+---
+
+## 🌐 Demo_video Link
+
+👉 [Demo_video](https://drive.google.com/file/d/15Rjb96GQ64-Fv4JFbxC5ZxbjPP9QyuV4/view?usp=sharing)
+
+---
+
+## 🌐 Explore the UI/UX wireframes, prototypes, and design system:
+
+👉 [Figma link](https://www.figma.com/design/geNSGy5IFxDakMnTWfcsvw/NutriGlow?node-id=0-1&t=uD9af2E3Mddg4Mkr-1)
 
 ---
 
