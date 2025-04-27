@@ -1,4 +1,4 @@
-# 🥗 NutriGlow - Food Recommendation App
+# 🥗 NutriGlow - smart recipe Recommendation App
 
 Welcome to **NutriGlow**, your personalized guide to healthy eating and smart recipe recommendations!
 
