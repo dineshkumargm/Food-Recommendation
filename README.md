@@ -63,8 +63,67 @@ Welcome to **NutriGlow**, your personalized guide to healthy eating and smart re
 ## 📚 Project Structure
 
 ```bash
-frontend/         # React frontend (pages, components, Redux store)
-backend/          # Node.js Express backend (routes, controllers, models)
+FOOD-RECOMMENDATION
+├── Backend
+│   ├── config
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── recipeController.js
+│   │   └── socialController.js
+│   ├── middleware
+│   │   └── authMiddleware.js
+│   ├── models
+│   │   ├── aiFeaturesModel.js
+│   │   ├── inventoryModel.js
+│   │   ├── Post.js
+│   │   ├── Recipe.js
+│   │   └── User.js
+│   ├── routes
+│   │   ├── aiFeatureRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── dashboard.js
+│   │   ├── inventoryRoutes.js
+│   │   ├── recipeRoutes.js
+│   │   └── socialRoutes.js
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── food_recommendation (React Frontend)
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src
+│   │   ├── api
+│   │   │   └── apis.js
+│   │   ├── components
+│   │   │   ├── About.js
+│   │   │   ├── ChatBot.js
+│   │   │   ├── Home.js
+│   │   │   ├── Login.js
+│   │   │   ├── PostRecipe.js
+│   │   │   └── RegisterPage.js
+│   │   ├── redux
+│   │   │   ├── actions
+│   │   │   │   └── userActions.js
+│   │   │   └── reducers
+│   │   │       ├── recipeReducer.js
+│   │   │       ├── authSlice.js
+│   │   │       ├── chatSlice.js
+│   │   │       └── index.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── store.js
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   └── tailwind.config.js
+
 ```
 
 ---
