@@ -25,6 +25,7 @@ const SearchUsersPage = () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/auth/search-users?query=${userSearchQuery}`);
         setFoundUsers(response.data);
+        console.log(response.data);
       } catch (err) {
         console.error('Error fetching users:', err);
         setFoundUsers([]);
@@ -104,22 +105,22 @@ const SearchUsersPage = () => {
           <div className="space-y-4">
             {foundUsers.map((user) => (
               <div
-                key={user.id}
+                key={user._id}
                 className="bg-gray-800 p-6 rounded-2xl border border-pink-600 shadow-lg flex flex-col sm:flex-row justify-between items-center"
               >
                 <p className="text-lg">
                   Username: <span className="font-bold text-pink-400">{user.username}</span>
                 </p>
-                {followedUsers.includes(user.id) || user.followers.includes(userId) ? (
+                {followedUsers.includes(user._id) || user.followers.includes(userId) ? (
                   <button
-                    onClick={() => handleUnfollow(user.id)} // Pass correct targetUserId
+                    onClick={() => handleUnfollow(user._id)} // Pass correct targetUserId
                     className="mt-4 sm:mt-0 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200"
                   >
                     Unfollow
                   </button>
                 ) : (
                   <button
-                    onClick={() => handleFollow(user.id)} // Pass correct targetUserId
+                    onClick={() => handleFollow(user._id)} // Pass correct targetUserId
                     className="mt-4 sm:mt-0 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200"
                   >
                     Follow
