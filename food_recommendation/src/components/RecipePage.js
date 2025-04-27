@@ -227,43 +227,58 @@ const RecipesPage = () => {
 
       {/* Recipe Detail Modal */}
       <AnimatePresence>
-        {selectedRecipe && (
-          <motion.div
-            className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="bg-black/80 w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-1/2 max-w-lg p-8 rounded-2xl text-center relative"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-            >
-              <button
-                onClick={handleCloseDetail}
-                className="absolute top-4 right-4 text-cyan-400 hover:text-cyan-500"
-              >
-                ✖
-              </button>
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">{selectedRecipe.title}</h3>
-              <p className="text-lg text-gray-400 mb-4">{selectedRecipe.description}</p>
-              <p className="text-md text-gray-300">Ingredients:</p>
-              <ul className="list-disc list-inside text-gray-400 mb-4">
-                {selectedRecipe.ingredients.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-                ))}
-              </ul>
-              <p className="text-md text-gray-300">Steps:</p>
-              <ul className="list-decimal list-inside text-gray-400">
-                {selectedRecipe.steps.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
+  {selectedRecipe && (
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className="bg-black/80 w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-1/2 max-w-2xl max-h-[90vh] overflow-y-auto p-8 rounded-2xl relative text-left"
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0.8 }}
+      >
+        <button
+          onClick={handleCloseDetail}
+          className="absolute top-4 right-4 text-cyan-400 hover:text-cyan-500"
+        >
+          ✖
+        </button>
+
+        <h3 className="text-3xl font-bold text-cyan-300 mb-6">{selectedRecipe.title}</h3>
+
+        <p className="text-lg text-gray-400 mb-6">{selectedRecipe.description}</p>
+
+        <p className="text-md text-gray-300 font-semibold mb-2">Ingredients:</p>
+        {selectedRecipe.ingredients && selectedRecipe.ingredients.length > 0 ? (
+          <ul className="list-disc list-inside text-gray-300 mb-6">
+            {selectedRecipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-gray-300 mb-6">No ingredients provided.</p>
         )}
-      </AnimatePresence>
+
+        <p className="text-md text-gray-300 font-semibold mb-2">Steps:</p>
+        {selectedRecipe.steps && selectedRecipe.steps.length > 0 ? (
+          <ol className="list-decimal list-inside text-gray-300 mb-6">
+            {selectedRecipe.steps.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
+        ) : (
+          <p className="text-gray-300 mb-6">No steps provided.</p>
+        )}
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+
     </div>
   );
 };
