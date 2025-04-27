@@ -7,7 +7,7 @@ const User = require('../models/User');
 // @access   Protected (or Public if testing)
 router.post('/follow', async (req, res) => {
   const { currentUserId, targetUserId } = req.body;
-
+  console.log(req.body)
   if (!currentUserId || !targetUserId) {
     return res.status(400).json({ message: "Missing fields" });
   }

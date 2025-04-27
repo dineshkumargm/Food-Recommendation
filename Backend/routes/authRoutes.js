@@ -29,16 +29,21 @@ router.get('/user/:username', async (req, res) => {
   }
 });
 // server-side route
-router.post('/get-users-by-ids', async (req, res) => {
-    try {
-      const { ids } = req.body;
-      const users = await User.find({ _id: { $in: ids } }).select('_id username');
-      res.json(users);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ message: 'Server error' });
-    }
-  });
+router.get('/search-users', async (req, res) => {
+  try {
+    const query = req.query.query;
+    if (!query) return res.status(400).json({ message: 'No query provided.' });
+
+    const users = await User.find({
+      username: { $regex: query, $options: 'i' }, // Case insensitive
+    }).select('-password'); // Don't send password
+
+    res.json(users);
+  } catch (error) {
+    console.error('Error searching users:', error);
+    res.status(500).json({ message: 'Server error.' });
+  }
+});
   
 
 module.exports = router;
