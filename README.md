@@ -2,6 +2,9 @@
 
 Welcome to **NutriGlow**, your personalized guide to healthy eating and smart recipe recommendations!
 
+<img width="1583" height="1022" alt="image" src="https://github.com/user-attachments/assets/7b436faf-828d-4bab-8b43-5d9879e8cb02" />
+
+
 ## 🌐 Live Link
 
 👉 Live Demo: [NutriGlow](http://3.111.246.217/)
